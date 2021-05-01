@@ -29,11 +29,20 @@ namespace Pieu_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.tabledesdonneesgrid = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tddggvcontextmenustrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.collerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.couperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajouterUnSondageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supprimerUnSondageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.supprimerTousLesSondagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabledesdonneesgrid)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tddggvcontextmenustrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -50,6 +59,7 @@ namespace Pieu_Pro
             // 
             this.tabledesdonneesgrid.AllowUserToOrderColumns = true;
             this.tabledesdonneesgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tabledesdonneesgrid.ContextMenuStrip = this.tddggvcontextmenustrip;
             this.tabledesdonneesgrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabledesdonneesgrid.Location = new System.Drawing.Point(3, 33);
             this.tabledesdonneesgrid.Name = "tabledesdonneesgrid";
@@ -75,6 +85,56 @@ namespace Pieu_Pro
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
+            // tddggvcontextmenustrip
+            // 
+            this.tddggvcontextmenustrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copierToolStripMenuItem,
+            this.collerToolStripMenuItem,
+            this.couperToolStripMenuItem,
+            this.ajouterUnSondageToolStripMenuItem,
+            this.supprimerUnSondageToolStripMenuItem,
+            this.supprimerTousLesSondagesToolStripMenuItem});
+            this.tddggvcontextmenustrip.Name = "tddggvcontextmenustrip";
+            this.tddggvcontextmenustrip.Size = new System.Drawing.Size(226, 158);
+            // 
+            // copierToolStripMenuItem
+            // 
+            this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
+            this.copierToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.copierToolStripMenuItem.Text = "Copier";
+            // 
+            // collerToolStripMenuItem
+            // 
+            this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
+            this.collerToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.collerToolStripMenuItem.Text = "Coller";
+            this.collerToolStripMenuItem.Click += new System.EventHandler(this.collerToolStripMenuItem_Click);
+            // 
+            // couperToolStripMenuItem
+            // 
+            this.couperToolStripMenuItem.Name = "couperToolStripMenuItem";
+            this.couperToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.couperToolStripMenuItem.Text = "Couper";
+            // 
+            // ajouterUnSondageToolStripMenuItem
+            // 
+            this.ajouterUnSondageToolStripMenuItem.Name = "ajouterUnSondageToolStripMenuItem";
+            this.ajouterUnSondageToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.ajouterUnSondageToolStripMenuItem.Text = "Ajouter un Sondage";
+            this.ajouterUnSondageToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnSondageToolStripMenuItem_Click);
+            // 
+            // supprimerUnSondageToolStripMenuItem
+            // 
+            this.supprimerUnSondageToolStripMenuItem.Name = "supprimerUnSondageToolStripMenuItem";
+            this.supprimerUnSondageToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.supprimerUnSondageToolStripMenuItem.Text = "Supprimer un sondage";
+            // 
+            // supprimerTousLesSondagesToolStripMenuItem
+            // 
+            this.supprimerTousLesSondagesToolStripMenuItem.Name = "supprimerTousLesSondagesToolStripMenuItem";
+            this.supprimerTousLesSondagesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.supprimerTousLesSondagesToolStripMenuItem.Text = "Supprimer tous les sondages";
+            // 
             // tabledesdonneesform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -86,6 +146,7 @@ namespace Pieu_Pro
             this.Load += new System.EventHandler(this.tabledesdonneesform_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabledesdonneesgrid)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tddggvcontextmenustrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -95,5 +156,12 @@ namespace Pieu_Pro
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView tabledesdonneesgrid;
         public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ContextMenuStrip tddggvcontextmenustrip;
+        private System.Windows.Forms.ToolStripMenuItem copierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem collerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem couperToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajouterUnSondageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supprimerUnSondageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem supprimerTousLesSondagesToolStripMenuItem;
     }
 }

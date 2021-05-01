@@ -20,7 +20,44 @@ namespace Pieu_Pro
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        
+        private void sondagesform_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ajouterunsondagefenetre_Click(object sender, EventArgs e)
+        {
+            new parametressondagesform().ShowDialog();
+        }
+
+        private void supprimertouslessondagesfenetre_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Voulez vous supprimer tous les sondages ?", "Supprimer tous les sondages", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if(touslesforms.snbsondages > 0)
+                {
+                    touslesforms.stddf.tabledesdonneesgrid.Rows.Clear();
+                    touslesforms.stddf.tabledesdonneesgrid.Columns.Clear();
+                    touslesforms.stddd.Clear();
+                    touslesforms.ssondf.emchart.Series.Clear();
+                    touslesforms.ssondf.plchart.Series.Clear();
+                    touslesforms.ssondf.pfchart.Series.Clear();
+                    touslesforms.snbsondages = 0;
+                    touslesforms.ssondf.nbsondageslabel.Text = Convert.ToString(touslesforms.snbsondages);
+                    MessageBox.Show("Tous les sondages ont été supprimés avec succès");
+
+                }
+                    
+            }
+        }
+
+        private void supprimerunsondagefenetre_Click(object sender, EventArgs e)
+        {
+            new supprimerunsondageform().ShowDialog();
+        }
+
+        private void tablededonneesfenetre_Click(object sender, EventArgs e)
         {
             if (touslesforms.snbsondages == 0)
                 MessageBox.Show("La table des sondages est vide");
@@ -31,29 +68,6 @@ namespace Pieu_Pro
                 // tabledesdonneesform.tabledesdonneesgrid = tabledesdonneesform.stdddgv;
                 tabledesdonneesform.ShowDialog();
             }
-
-            
-
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new parametressondagesform().ShowDialog();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            new supprimerunsondageform().ShowDialog();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Voulez vous supprimer tous les sondages ?","Supprimer tous les sondages",MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
-            {
-
-            }
-        }
-
-        
     }
 }

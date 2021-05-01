@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using NumSharp;
 using System.Windows.Forms.DataVisualization.Charting;
+using System.Text.RegularExpressions;
 
 namespace Pieu_Pro
 {
@@ -20,8 +21,8 @@ namespace Pieu_Pro
         public tabledesdonneesform()
         {
             InitializeComponent();
-            //tabledesdonneesgrid.RowCount = 120;
             
+
         }
        
         
@@ -49,19 +50,28 @@ namespace Pieu_Pro
 
         private void tabledesdonneesgrid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            touslesforms.stddd = new Dictionary<string, PMT>();
-
+            touslesforms.stddd.Clear();
             touslesforms.ssondf.emchart.Series.Clear();
             touslesforms.ssondf.plchart.Series.Clear();
+            touslesforms.ssondf.pfchart.Series.Clear();
 
 
             for (int i=0;i<touslesforms.snbsondages; i++) 
             {
                 PMT pressio = new PMT();
-                string name = Convert.ToString( touslesforms.stddf.tabledesdonneesgrid[5 * i, 0].Value);
+                string name;
+                if (touslesforms.stddf.tabledesdonneesgrid[5 * i, 0].Value != null)
+                {
+                    name = Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i, 0].Value);
+                    pressio.nom = name;
                 
-                pressio.nom = name;
-                pressio.cotetete = float.Parse(Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i+1, 1].Value));
+
+                if (touslesforms.stddf.tabledesdonneesgrid[5 * i + 1, 1].Value != null)
+                {
+                    pressio.cotetete = float.Parse(Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i + 1, 1].Value));
+                }
+
+                  
              
 
                 //Comptage du nombre de ligne du sondage et détermination de la profondeur
@@ -69,7 +79,7 @@ namespace Pieu_Pro
                 while (touslesforms.stddf.tabledesdonneesgrid[5 * i + 1, compteurligne+3].Value!=null)
                 {
                     //Recalcul cote
-                    touslesforms.stddf.tabledesdonneesgrid[5 * i , compteurligne].Value = pressio.cotetete - float.Parse(Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i + 1, compteurligne].Value));
+                    if (touslesforms.stddf.tabledesdonneesgrid[5 * i, compteurligne].Value != null) touslesforms.stddf.tabledesdonneesgrid[5 * i , compteurligne].Value = pressio.cotetete - float.Parse(Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i + 1, compteurligne].Value));
                     
                     pressio.cotes = new List<float>();
                     if (touslesforms.stddf.tabledesdonneesgrid[5 * i , compteurligne].Value != null)
@@ -96,31 +106,29 @@ namespace Pieu_Pro
 
                 touslesforms.stddd.Add(name, pressio);
 
-                //Tracer Em=f(cote) et pl=f(cote) à partir du dictionnaire
-                touslesforms.ssondf.emchart.Series.Add(name);
-                touslesforms.ssondf.emchart.Series[name].ChartType = SeriesChartType.Point;
-                if (pressio.emmpa.Count() == pressio.cotes.Count())
-                    touslesforms.ssondf.emchart.Series[name].Points.DataBindXY(pressio.emmpa, pressio.cotes);
-                touslesforms.ssondf.emchart.Series[name].LegendText = name;
-               
+                    //Tracer Em=f(cote) et pl=f(cote) à partir du dictionnaire
+                    touslesforms.ssondf.emchart.Series.Add(name);
+                    touslesforms.ssondf.emchart.Series[name].ChartType = SeriesChartType.Point;
+                    //if ( pressio.emmpa.Count() == pressio.cotes.Count())
+                        //touslesforms.ssondf.emchart.Series[name].Points.DataBindXY(pressio.emmpa, pressio.cotes);
+                    touslesforms.ssondf.emchart.Series[name].LegendText = name;
 
-                touslesforms.ssondf.plchart.Series.Add(name);
-                touslesforms.ssondf.emchart.Series[name].ChartType = SeriesChartType.Point;
-                if(pressio.plmpa.Count()==pressio.cotes.Count())
-                    touslesforms.ssondf.plchart.Series[name].Points.DataBindXY(pressio.plmpa, pressio.cotes);
+                    //Tracer pl=f(cote) et pl=f(cote) à partir du dictionnaire
+                    touslesforms.ssondf.plchart.Series.Add(name);
+                touslesforms.ssondf.plchart.Series[name].ChartType = SeriesChartType.Point;
+                //if (pressio.plmpa.Count() == pressio.cotes.Count())
+                    //touslesforms.ssondf.plchart.Series[name].Points.DataBindXY(pressio.plmpa, pressio.cotes);
                 touslesforms.ssondf.plchart.Series[name].LegendText = name;
 
+                    //Tracer pf=f(cote) et pl=f(cote) à partir du dictionnaire
+                    touslesforms.ssondf.pfchart.Series.Add(name);
+                touslesforms.ssondf.pfchart.Series[name].ChartType = SeriesChartType.Point;
+                //if(pressio.pfmpa.Count()==pressio.cotes.Count())
+                    //touslesforms.ssondf.pfchart.Series[name].Points.DataBindXY(pressio.pfmpa, pressio.cotes);
+                touslesforms.ssondf.pfchart.Series[name].LegendText = name;
+                }
                 //  Chart1.Series("SecondeSeries").Points.DataBindXY(x, y)
             }
-
-
-            //Metre à jour le dictionnaire
-
-
-
-            //Tracer Em=f(cote) et pl=f(cote) à partir du dictionnaire
-            //touslesforms.ssondf.emchart.Series[nomsondage].Points.AddXY(touslesforms.stddf.tabledesdonneesgrid[nbcolonne + 2, 2 + i].Value, touslesforms.stddf.tabledesdonneesgrid[nbcolonne + 0, 2 + i].Value);
-            //touslesforms.ssondf.plchart.Series[nomsondage].Points.AddXY(touslesforms.stddf.tabledesdonneesgrid[nbcolonne + 3, 2 + i].Value, touslesforms.stddf.tabledesdonneesgrid[nbcolonne + 0, 2 + i].Value);
 
             /*
                 exemple de tracage  de courbe
@@ -139,5 +147,46 @@ namespace Pieu_Pro
              */
 
         }
+
+        public void Paste(DataGridView d)
+        {
+            //METTRE IF SELECTION VIDE
+            DataObject o = (DataObject)Clipboard.GetDataObject();
+            if (o.GetDataPresent(DataFormats.StringFormat))
+            {
+                string[] pastedRows = Regex.Split(o.GetData(DataFormats.StringFormat).ToString().TrimEnd("\r\n".ToCharArray()), "\r");
+                int j = 0;
+                int k = 0;
+                try { j = d.SelectedCells[0].RowIndex; } catch { }
+                try { k = d.SelectedCells[0].ColumnIndex; } catch { }
+                int l = k;
+                foreach (string pastedRow in pastedRows)
+                {
+                    string[] pastedRowCells = pastedRow.Split(new char[] { '\t' });
+                    foreach (string pastedRowCell in pastedRowCells)
+                    {
+                        d[k, j].Value = pastedRowCell;
+                        k++;
+                    }
+                    j++;
+                    k = l;
+                    //DataGridViewRow r = new DataGridViewRow();
+                    //r.CreateCells(d, pastedRow.Split(new char[] { '\t' }));
+                    // d.Rows.Insert(j, r);
+
+                }
+            }
+        }
+
+        private void collerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Paste(touslesforms.stddf.tabledesdonneesgrid);
+        }
+
+        private void ajouterUnSondageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new parametressondagesform().ShowDialog();
+        }
     }
+
 }
