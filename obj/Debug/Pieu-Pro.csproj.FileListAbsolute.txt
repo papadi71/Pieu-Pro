@@ -26,3 +26,9 @@ D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\System.Memory.xml
 D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\System.Numerics.Vectors.xml
 D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\obj\Debug\Pieu-Pro.csproj.CopyComplete
+D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\MathNet.Numerics.dll
+D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\MathNet.Numerics.xml
+D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\OxyPlot.dll
+D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\OxyPlot.WindowsForms.dll
+D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\OxyPlot.xml
+D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\OxyPlot.WindowsForms.xml

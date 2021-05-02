@@ -31,12 +31,12 @@ namespace Pieu_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea emchartarea = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend emlegend = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea pfchartarea = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend pflegend = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea plchartarea = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend pllegend = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -230,11 +230,11 @@ namespace Pieu_Pro
             // 
             // emchart
             // 
-            chartArea4.Name = "emchartarea";
-            this.emchart.ChartAreas.Add(chartArea4);
+            emchartarea.Name = "emchartarea";
+            this.emchart.ChartAreas.Add(emchartarea);
             this.emchart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "emlegend";
-            this.emchart.Legends.Add(legend4);
+            emlegend.Name = "emlegend";
+            this.emchart.Legends.Add(emlegend);
             this.emchart.Location = new System.Drawing.Point(3, 25);
             this.emchart.Name = "emchart";
             this.emchart.Size = new System.Drawing.Size(217, 342);
@@ -243,11 +243,11 @@ namespace Pieu_Pro
             // 
             // pfchart
             // 
-            chartArea5.Name = "pfchartarea";
-            this.pfchart.ChartAreas.Add(chartArea5);
+            pfchartarea.Name = "pfchartarea";
+            this.pfchart.ChartAreas.Add(pfchartarea);
             this.pfchart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend5.Name = "pflegend";
-            this.pfchart.Legends.Add(legend5);
+            pflegend.Name = "pflegend";
+            this.pfchart.Legends.Add(pflegend);
             this.pfchart.Location = new System.Drawing.Point(448, 25);
             this.pfchart.Name = "pfchart";
             this.pfchart.Size = new System.Drawing.Size(218, 342);
@@ -256,11 +256,11 @@ namespace Pieu_Pro
             // 
             // plchart
             // 
-            chartArea6.Name = "plchartarea";
-            this.plchart.ChartAreas.Add(chartArea6);
+            plchartarea.Name = "plchartarea";
+            this.plchart.ChartAreas.Add(plchartarea);
             this.plchart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend6.Name = "pllegend";
-            this.plchart.Legends.Add(legend6);
+            pllegend.Name = "pllegend";
+            this.plchart.Legends.Add(pllegend);
             this.plchart.Location = new System.Drawing.Point(226, 25);
             this.plchart.Name = "plchart";
             this.plchart.Size = new System.Drawing.Size(216, 342);

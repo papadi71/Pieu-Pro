@@ -16,5 +16,10 @@ namespace Pieu_Pro
         {
             InitializeComponent();
         }
+
+        private void proprietesform_Load(object sender, EventArgs e)
+        {
+            tabledesformations.RowCount = 10;
+        }
     }
 }

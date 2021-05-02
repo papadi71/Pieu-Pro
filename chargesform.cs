@@ -16,5 +16,10 @@ namespace Pieu_Pro
         {
             InitializeComponent();
         }
+
+        private void chargesform_Load(object sender, EventArgs e)
+        {
+            tabledescharges.RowCount = 20;
+        }
     }
 }

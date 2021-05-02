@@ -73,7 +73,7 @@ namespace Pieu_Pro
                 touslesforms.stddf.tabledesdonneesgrid[nbcolonne + 0, 1].Value = "cote tête";
                 touslesforms.stddf.tabledesdonneesgrid[nbcolonne + 1, 1].Value = cotetetesondage;
 
-                touslesforms.stddf.tabledesdonneesgrid[nbcolonne + 0, 2].Value = "Cote";
+                touslesforms.stddf.tabledesdonneesgrid[nbcolonne + 0, 2].Value = "Cote(m)";
                 touslesforms.stddf.tabledesdonneesgrid[nbcolonne + 1, 2].Value = "Profondeur(m)";
                 touslesforms.stddf.tabledesdonneesgrid[nbcolonne + 2, 2].Value = "Em(MPa)";
                 touslesforms.stddf.tabledesdonneesgrid[nbcolonne + 3, 2].Value = "pl(MPa)";
@@ -100,10 +100,12 @@ namespace Pieu_Pro
                 //touslesforms.snbsondages = touslesforms.snbsondages + 1;
                 //touslesforms.ssondf.nbsondageslabel.Text = Convert.ToString(touslesforms.snbsondages);
 
+                this.Visible = false; 
                 this.Close();
-                this.Hide();
-                if (touslesforms.stddf.TopLevel == false)
+               
+                if (touslesforms.stddf.Visible == false)
                     touslesforms.stddf.ShowDialog();
+               
 
             }
             

@@ -32,7 +32,6 @@ namespace Pieu_Pro
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.tabledesdonneesgrid = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tddggvcontextmenustrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.collerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,9 +39,10 @@ namespace Pieu_Pro
             this.ajouterUnSondageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerUnSondageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.supprimerTousLesSondagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.tabledesdonneesgrid)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tddggvcontextmenustrip.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -68,23 +68,6 @@ namespace Pieu_Pro
             this.tabledesdonneesgrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabledesdonneesgrid_CellContentClick);
             this.tabledesdonneesgrid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabledesdonneesgrid_CellValueChanged);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tabledesdonneesgrid, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
-            this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
             // tddggvcontextmenustrip
             // 
             this.tddggvcontextmenustrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -100,13 +83,14 @@ namespace Pieu_Pro
             // copierToolStripMenuItem
             // 
             this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
-            this.copierToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.copierToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.copierToolStripMenuItem.Text = "Copier";
+            this.copierToolStripMenuItem.Click += new System.EventHandler(this.copierToolStripMenuItem_Click);
             // 
             // collerToolStripMenuItem
             // 
             this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
-            this.collerToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.collerToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.collerToolStripMenuItem.Text = "Coller";
             this.collerToolStripMenuItem.Click += new System.EventHandler(this.collerToolStripMenuItem_Click);
             // 
@@ -135,6 +119,23 @@ namespace Pieu_Pro
             this.supprimerTousLesSondagesToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.supprimerTousLesSondagesToolStripMenuItem.Text = "Supprimer tous les sondages";
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tabledesdonneesgrid, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
             // tabledesdonneesform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,8 +146,8 @@ namespace Pieu_Pro
             this.Text = "tabledesdonneesform";
             this.Load += new System.EventHandler(this.tabledesdonneesform_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabledesdonneesgrid)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.tddggvcontextmenustrip.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -24,11 +24,12 @@ namespace Pieu_Pro
         public static calculform scalf = new calculform();
 
         public static int snbsondages=0;
+        public static int snbformations = 0;
 
         public static DataTable dataTable = new DataTable();
 
         public static Dictionary<string, PMT> stddd = new Dictionary<string, PMT>();
-
+        public static Dictionary<string, formation> sformationsd = new Dictionary<string, formation>();
         
     }
 
