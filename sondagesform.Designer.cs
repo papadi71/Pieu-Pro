@@ -31,12 +31,10 @@ namespace Pieu_Pro
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea emchartarea = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend emlegend = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea pfchartarea = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend pflegend = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea plchartarea = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend pllegend = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,9 +49,11 @@ namespace Pieu_Pro
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.emchart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.sondagelegendepanel = new System.Windows.Forms.Panel();
             this.pfchart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.plchart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -184,16 +184,19 @@ namespace Pieu_Pro
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
             this.tableLayoutPanel3.Controls.Add(this.label5, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.label4, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.emchart, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.pfchart, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.plchart, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label6, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.sondagelegendepanel, 3, 1);
+            this.tableLayoutPanel3.Controls.Add(this.pfchart, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.plchart, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 31);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -209,63 +212,36 @@ namespace Pieu_Pro
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(448, 0);
+            this.label5.Location = new System.Drawing.Point(403, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(218, 22);
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(248, 22);
             this.label5.TabIndex = 9;
             this.label5.Text = "Pression de fluage nette";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(226, 0);
+            this.label4.Location = new System.Drawing.Point(203, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(216, 22);
+            this.label4.Size = new System.Drawing.Size(194, 22);
             this.label4.TabIndex = 8;
             this.label4.Text = "Pression limite nette";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // emchart
             // 
-            emchartarea.Name = "emchartarea";
-            this.emchart.ChartAreas.Add(emchartarea);
+            chartArea4.Name = "emchartarea";
+            this.emchart.ChartAreas.Add(chartArea4);
             this.emchart.Dock = System.Windows.Forms.DockStyle.Fill;
-            emlegend.Name = "emlegend";
-            this.emchart.Legends.Add(emlegend);
             this.emchart.Location = new System.Drawing.Point(3, 25);
             this.emchart.Name = "emchart";
-            this.emchart.Size = new System.Drawing.Size(217, 342);
+            this.emchart.Size = new System.Drawing.Size(194, 342);
             this.emchart.TabIndex = 4;
             this.emchart.Text = "emchart";
-            // 
-            // pfchart
-            // 
-            pfchartarea.Name = "pfchartarea";
-            this.pfchart.ChartAreas.Add(pfchartarea);
-            this.pfchart.Dock = System.Windows.Forms.DockStyle.Fill;
-            pflegend.Name = "pflegend";
-            this.pfchart.Legends.Add(pflegend);
-            this.pfchart.Location = new System.Drawing.Point(448, 25);
-            this.pfchart.Name = "pfchart";
-            this.pfchart.Size = new System.Drawing.Size(218, 342);
-            this.pfchart.TabIndex = 6;
-            this.pfchart.Text = "pfchart";
-            // 
-            // plchart
-            // 
-            plchartarea.Name = "plchartarea";
-            this.plchart.ChartAreas.Add(plchartarea);
-            this.plchart.Dock = System.Windows.Forms.DockStyle.Fill;
-            pllegend.Name = "pllegend";
-            this.plchart.Legends.Add(pllegend);
-            this.plchart.Location = new System.Drawing.Point(226, 25);
-            this.plchart.Name = "plchart";
-            this.plchart.Size = new System.Drawing.Size(216, 342);
-            this.plchart.TabIndex = 5;
-            this.plchart.Text = "plchart";
             // 
             // label3
             // 
@@ -274,10 +250,54 @@ namespace Pieu_Pro
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 22);
+            this.label3.Size = new System.Drawing.Size(194, 22);
             this.label3.TabIndex = 7;
             this.label3.Text = "Module pressiométrique";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(657, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(9, 22);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Sondages";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // sondagelegendepanel
+            // 
+            this.sondagelegendepanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sondagelegendepanel.Location = new System.Drawing.Point(657, 25);
+            this.sondagelegendepanel.Name = "sondagelegendepanel";
+            this.sondagelegendepanel.Size = new System.Drawing.Size(9, 342);
+            this.sondagelegendepanel.TabIndex = 11;
+            // 
+            // pfchart
+            // 
+            chartArea5.Name = "pfchartarea";
+            this.pfchart.ChartAreas.Add(chartArea5);
+            this.pfchart.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend2.Name = "Legend1";
+            this.pfchart.Legends.Add(legend2);
+            this.pfchart.Location = new System.Drawing.Point(403, 25);
+            this.pfchart.Name = "pfchart";
+            this.pfchart.Size = new System.Drawing.Size(248, 342);
+            this.pfchart.TabIndex = 6;
+            this.pfchart.Text = "pfchart";
+            this.pfchart.Click += new System.EventHandler(this.pfchart_Click);
+            // 
+            // plchart
+            // 
+            chartArea6.Name = "plchartarea";
+            this.plchart.ChartAreas.Add(chartArea6);
+            this.plchart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plchart.Location = new System.Drawing.Point(203, 25);
+            this.plchart.Name = "plchart";
+            this.plchart.Size = new System.Drawing.Size(194, 342);
+            this.plchart.TabIndex = 12;
+            this.plchart.Text = "plchart";
             // 
             // sondagesform
             // 
@@ -316,10 +336,12 @@ namespace Pieu_Pro
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         public System.Windows.Forms.DataVisualization.Charting.Chart emchart;
         public System.Windows.Forms.DataVisualization.Charting.Chart pfchart;
-        public System.Windows.Forms.DataVisualization.Charting.Chart plchart;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Panel sondagelegendepanel;
+        public System.Windows.Forms.DataVisualization.Charting.Chart plchart;
     }
 }

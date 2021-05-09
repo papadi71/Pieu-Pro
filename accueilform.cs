@@ -84,7 +84,7 @@ namespace Pieu_Pro
 
         private void accueilform_Load(object sender, EventArgs e)
         {
-
+            openchildform(touslesforms.spropf);
         }
     }
 }

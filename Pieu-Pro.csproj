@@ -107,6 +107,12 @@
     <Compile Include="proprietesform.Designer.cs">
       <DependentUpon>proprietesform.cs</DependentUpon>
     </Compile>
+    <Compile Include="resultatsform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="resultatsform.Designer.cs">
+      <DependentUpon>resultatsform.cs</DependentUpon>
+    </Compile>
     <Compile Include="sondagesform.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </Compile>
     <EmbeddedResource Include="proprietesform.resx">
       <DependentUpon>proprietesform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="resultatsform.resx">
+      <DependentUpon>resultatsform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="sondagesform.resx">
       <DependentUpon>sondagesform.cs</DependentUpon>

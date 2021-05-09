@@ -28,7 +28,18 @@ namespace Pieu_Pro
 
         private void ajouterunsondagefenetre_Click(object sender, EventArgs e)
         {
-            new parametressondagesform().ShowDialog();
+            parametressondagesform  pps = new parametressondagesform();
+            pps.paraprofinterfacesdgv.RowCount = touslesforms.snbformations;
+            //Initialiser Les formations
+          
+            for (int k=0; k<touslesforms.snbformations; k++)
+            {
+                if (touslesforms.spropf.tabledesformations.RowCount!=0)
+                pps.paraprofinterfacesdgv[0, k].Value = touslesforms.spropf.tabledesformations[0, k].Value;
+                pps.paraprofinterfacesdgv[1, k].Value = true;
+            }
+            pps.paraprofinterfacesdgv.ReadOnly = false;
+            pps.ShowDialog();
         }
 
         private void supprimertouslessondagesfenetre_Click(object sender, EventArgs e)
@@ -68,6 +79,11 @@ namespace Pieu_Pro
                 // tabledesdonneesform.tabledesdonneesgrid = tabledesdonneesform.stdddgv;
                 tabledesdonneesform.ShowDialog();
             }
+        }
+
+        private void pfchart_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

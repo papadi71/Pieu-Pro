@@ -15,15 +15,20 @@ namespace Pieu_Pro
         public float cotetoitmin;
         public float cotetoitmax;
 
-        public float cotebasemoyenne;
+        
         public float cotebasemin;
         public float cotebasemax;
 
-        public List<float> cotes;
-        public List<float> emmpa;
-        public List<float> plmpa;
-        public List<float> pfmpa;
+        public List<float> cotesbase=new List<float>(); 
+        public List<float> cotes=new List<float>();
+        public List<float> emmpa = new List<float>();
+        public List<float> plmpa = new List<float>();
+        public List<float> pfmpa = new List<float>();
 
+        public double cotebasemoyenne()
+        {
+            return Statistics.Mean(cotesbase);
+        }
         public double emmoyen()
         {
             return Statistics.HarmonicMean(emmpa);

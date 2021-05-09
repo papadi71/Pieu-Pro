@@ -12,10 +12,11 @@ namespace Pieu_Pro
         public float cotetete;
         public float profondeur;
 
-        public List<float> cotes ;
-        public List<float> emmpa ;
-        public List<float> plmpa ;
-        public List<float> pfmpa ;
+        public List<float> cotes =new List<float>();
+        public List<float> emmpa = new List<float>();
+        public List<float> plmpa = new List<float>();
+        public List<float> pfmpa = new List<float>();
+        public  Dictionary<string,float> basesformations=new Dictionary<string, float>();
     }
 
 }

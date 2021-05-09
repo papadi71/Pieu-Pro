@@ -37,6 +37,8 @@ namespace Pieu_Pro
             int nbcolonne = touslesforms.snbsondages * 5;
             touslesforms.snbsondages = touslesforms.snbsondages + 1;
             touslesforms.ssondf.nbsondageslabel.Text = Convert.ToString(touslesforms.snbsondages);
+            if (nomsondagetextbox.Text == "")
+                nomsondagetextbox.Text = "Sondage" + Convert.ToString(touslesforms.snbsondages);
             string namesaisi =Convert.ToString( nomsondagetextbox.Text);
             if (touslesforms.stddd.Keys.Contains(namesaisi))
             {
@@ -61,11 +63,32 @@ namespace Pieu_Pro
                 pressio.cotetete = cotetetesondage;
                 pressio.nom = nomsondage;
                 pressio.profondeur = profondeur;
+                //pressio.basesformations=new Dictionary<string, float>();
+
+                //mise à jour du dictionnaire des formations et du dictionnaire baseformation de pressio
+                for(int k=0; k < touslesforms.snbformations; k++)
+                {
+                    //touslesforms.stdddstockage[name].basesformations.Keys
+                    if ((bool)paraprofinterfacesdgv[1, k].Value == true)
+                    {
+                        pressio.basesformations.Add(Convert.ToString(paraprofinterfacesdgv[0, k].Value), float.Parse(Convert.ToString(paraprofinterfacesdgv[2, k].Value)));
+                        
+
+                        if (touslesforms.sformationsd.Keys.Contains(Convert.ToString(paraprofinterfacesdgv[0, k].Value)))
+                            touslesforms.sformationsd[Convert.ToString(paraprofinterfacesdgv[0, k].Value)].cotesbase.Add(float.Parse(Convert.ToString(paraprofinterfacesdgv[2, k].Value)));
+                        else
+                        {
+                            touslesforms.sformationsd.Add(Convert.ToString(paraprofinterfacesdgv[0, k].Value), new formation());
+                            touslesforms.sformationsd[Convert.ToString(paraprofinterfacesdgv[0, k].Value)].cotesbase.Add(float.Parse(Convert.ToString(paraprofinterfacesdgv[2, k].Value)));
+                        }
+                    }
+                    
+                }
 
                 //Mise à jour du dictionnaire avec un nouveau sondage
-                //touslesforms.stddd.Add(nomsondage, pressio);
+                touslesforms.stddd.Add(nomsondage, pressio);
 
-
+                //Ecriture dan le datagridview
                 touslesforms.stddf.tabledesdonneesgrid.ColumnCount = nbcolonne + 5;
                 touslesforms.stddf.tabledesdonneesgrid.RowCount = 100;
 
@@ -115,5 +138,52 @@ namespace Pieu_Pro
         {
 
         }
+
+        private void cotetetesondagetextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+               (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void profondeursondagetextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+               (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void passondagetextbox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+               (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+     
     }
 }

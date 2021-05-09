@@ -83,6 +83,8 @@ namespace Pieu_Pro
             // copierToolStripMenuItem
             // 
             this.copierToolStripMenuItem.Name = "copierToolStripMenuItem";
+            this.copierToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+C";
+            this.copierToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
             this.copierToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.copierToolStripMenuItem.Text = "Copier";
             this.copierToolStripMenuItem.Click += new System.EventHandler(this.copierToolStripMenuItem_Click);
@@ -90,6 +92,8 @@ namespace Pieu_Pro
             // collerToolStripMenuItem
             // 
             this.collerToolStripMenuItem.Name = "collerToolStripMenuItem";
+            this.collerToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+V";
+            this.collerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
             this.collerToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.collerToolStripMenuItem.Text = "Coller";
             this.collerToolStripMenuItem.Click += new System.EventHandler(this.collerToolStripMenuItem_Click);
@@ -97,6 +101,8 @@ namespace Pieu_Pro
             // couperToolStripMenuItem
             // 
             this.couperToolStripMenuItem.Name = "couperToolStripMenuItem";
+            this.couperToolStripMenuItem.ShortcutKeyDisplayString = "Ctrl+X";
+            this.couperToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
             this.couperToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.couperToolStripMenuItem.Text = "Couper";
             // 
@@ -143,7 +149,7 @@ namespace Pieu_Pro
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "tabledesdonneesform";
-            this.Text = "tabledesdonneesform";
+            this.Text = "Table des données de sondages";
             this.Load += new System.EventHandler(this.tabledesdonneesform_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabledesdonneesgrid)).EndInit();
             this.tddggvcontextmenustrip.ResumeLayout(false);

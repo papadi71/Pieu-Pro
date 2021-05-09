@@ -32,3 +32,4 @@ D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\OxyPlot.dll
 D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\OxyPlot.WindowsForms.dll
 D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\OxyPlot.xml
 D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\OxyPlot.WindowsForms.xml
+D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\obj\Debug\Pieu_Pro.resultatsform.resources

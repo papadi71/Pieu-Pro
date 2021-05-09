@@ -16,5 +16,21 @@ namespace Pieu_Pro
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            touslesforms.snbcalcul++;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (touslesforms.snbcalcul > 0)
+                touslesforms.sresf.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
