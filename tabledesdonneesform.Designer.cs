@@ -58,6 +58,7 @@ namespace Pieu_Pro
             // tabledesdonneesgrid
             // 
             this.tabledesdonneesgrid.AllowUserToOrderColumns = true;
+            this.tabledesdonneesgrid.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tabledesdonneesgrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabledesdonneesgrid.ContextMenuStrip = this.tddggvcontextmenustrip;
             this.tabledesdonneesgrid.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -78,7 +79,7 @@ namespace Pieu_Pro
             this.supprimerUnSondageToolStripMenuItem,
             this.supprimerTousLesSondagesToolStripMenuItem});
             this.tddggvcontextmenustrip.Name = "tddggvcontextmenustrip";
-            this.tddggvcontextmenustrip.Size = new System.Drawing.Size(226, 158);
+            this.tddggvcontextmenustrip.Size = new System.Drawing.Size(226, 136);
             // 
             // copierToolStripMenuItem
             // 

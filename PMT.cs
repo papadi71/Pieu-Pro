@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,8 +18,14 @@ namespace Pieu_Pro
         public List<float> plmpa = new List<float>();
         public List<float> pfmpa = new List<float>();
         public  Dictionary<string,float> basesformations=new Dictionary<string, float>();
+        //public List<string,float> bf = new List<string, float>();
     }
+    [Serializable]
+    public class Map<TKey, TValue>
+    {
 
+    }
+    
 }
 
 /*

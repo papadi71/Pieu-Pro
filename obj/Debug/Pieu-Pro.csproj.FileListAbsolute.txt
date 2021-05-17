@@ -33,3 +33,7 @@ D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\OxyPlot.WindowsForms.dll
 D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\OxyPlot.xml
 D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\OxyPlot.WindowsForms.xml
 D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\obj\Debug\Pieu_Pro.resultatsform.resources
+D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\FileAssociation.dll
+D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\FileAssociation.xml
+D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\Newtonsoft.Json.dll
+D:\TERRE\logiciels\Pieux-Pro\Pieu-Pro\bin\Debug\Newtonsoft.Json.xml

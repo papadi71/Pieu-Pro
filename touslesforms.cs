@@ -20,7 +20,8 @@ using OxyPlot.Reporting;
 
 namespace Pieu_Pro
 {
-    public class touslesforms
+    [SerializableAttribute]
+     class touslesforms
     {
         
         public static accueilform saccf = new accueilform();
@@ -227,6 +228,8 @@ namespace Pieu_Pro
             v.BringToFront();
             v.Show();
         }
+
+
 
     }
 

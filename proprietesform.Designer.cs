@@ -367,19 +367,19 @@ namespace Pieu_Pro
         private System.Windows.Forms.Button supprimeruneformation;
         private System.Windows.Forms.Button ajouterformation;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox categoriedepieuxcb;
-        private System.Windows.Forms.TextBox diametretxtbox;
-        private System.Windows.Forms.ComboBox classesdepieuxcb;
+        public System.Windows.Forms.ComboBox categoriedepieuxcb;
+        public System.Windows.Forms.TextBox diametretxtbox;
+        public System.Windows.Forms.ComboBox classesdepieuxcb;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox methodedecalculcb;
+        public System.Windows.Forms.ComboBox methodedecalculcb;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label nbflabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomformation;
         private System.Windows.Forms.DataGridViewComboBoxColumn classedesol;
-        private System.Windows.Forms.TextBox nomcalcultxtbox;
+        public System.Windows.Forms.TextBox nomcalcultxtbox;
         private System.Windows.Forms.Label label7;
     }
 }

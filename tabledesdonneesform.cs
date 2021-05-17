@@ -14,6 +14,8 @@ using System.Windows.Forms.DataVisualization.Charting;
 using System.Text.RegularExpressions;
 
 
+
+
 namespace Pieu_Pro
 {
     
@@ -53,7 +55,7 @@ namespace Pieu_Pro
 
         private void tabledesdonneesgrid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-
+            float toitmoyen;
             /*
             Chart legendchart = new Chart();
             legendchart.Dock = DockStyle.Fill;
@@ -192,6 +194,8 @@ namespace Pieu_Pro
                             foreach (string kkkey in touslesforms.stdddstockage[name].basesformations.Keys)
                             {
                                 float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformations[kkkey];
+                               
+
                                 if (coteligne < toit && coteligne >= basef)
                                 {
                                     touslesforms.sformationsd[kkkey].cotes.Add(coteligne);
@@ -262,12 +266,16 @@ namespace Pieu_Pro
                         toit = pressio.cotetete;
 
                     }
-
+                   
 
                     //mise à jour du dictionnaire
                     foreach (string f in touslesforms.stdddstockage[name].basesformations.Keys)
                     {
                         pressio.basesformations.Add(f, touslesforms.stdddstockage[name].basesformations[f]);
+                        
+                        //Mise à jour des cotes base de la formation f dans le dictionnaire des formations
+                        float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformations[f];
+                        touslesforms.sformationsd[f].cotesbase.Add(basef);
                     }
                     //touslesforms.stddd[name]= pressio;
                     if (touslesforms.stddd.ContainsKey(name))
@@ -307,6 +315,14 @@ namespace Pieu_Pro
                 
 
             }
+            //création d'une liste contenant les toits de chaque sondage
+            List<float> listtoitmoyen = new List<float>();
+            foreach (string nomsondage in touslesforms.stddd.Keys) 
+            {
+                listtoitmoyen.Add(touslesforms.stddd[nomsondage].cotetete);
+            }
+            //Calcul du toit moyen
+            toitmoyen = (float)Statistics.Mean(listtoitmoyen);
 
             //Tracage en fonction des formations et création X et Ysynthese
             touslesforms.cotesyntese.Clear();
@@ -320,6 +336,7 @@ namespace Pieu_Pro
             touslesforms.smodelpl.Series.Clear();
             touslesforms.smodelpf.Series.Clear();
 
+            float tm = toitmoyen;
             int color = 1;
             foreach (string t in touslesforms.sformationsd.Keys)
             {
@@ -329,9 +346,8 @@ namespace Pieu_Pro
                 touslesforms.ajouterseriescater(touslesforms.sformationsd[t].plmpa, touslesforms.sformationsd[t].cotes, touslesforms.smodelpl,color);
                 touslesforms.ajouterseriescater(touslesforms.sformationsd[t].pfmpa, touslesforms.sformationsd[t].cotes, touslesforms.smodelpf,color);
 
-                touslesforms.cotesyntese.Add(Statistics.Maximum(touslesforms.sformationsd[t].cotes));
-                touslesforms.cotesyntese.Add(Statistics.Minimum(touslesforms.sformationsd[t].cotes));
-                //touslesforms.cotesyntese.Add((float)touslesforms.sformationsd[t].cotebasemoyenne());
+                touslesforms.cotesyntese.Add(tm);
+                 touslesforms.cotesyntese.Add((float)touslesforms.sformationsd[t].cotebasemoyenne());
                 touslesforms.emsyntese.Add((float)touslesforms.sformationsd[t].emmoyen());
                 touslesforms.emsyntese.Add((float)touslesforms.sformationsd[t].emmoyen());
                 touslesforms.plsyntese.Add((float)touslesforms.sformationsd[t].plmoyen());
@@ -339,6 +355,7 @@ namespace Pieu_Pro
                 touslesforms.pfsyntese.Add((float)touslesforms.sformationsd[t].pfmoyen());
                 touslesforms.pfsyntese.Add((float)touslesforms.sformationsd[t].pfmoyen());
 
+                tm = (float)touslesforms.sformationsd[t].cotebasemoyenne();
                 color++;
             }
             

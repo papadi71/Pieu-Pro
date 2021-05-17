@@ -74,10 +74,10 @@ namespace Pieu_Pro
                 MessageBox.Show("La table des sondages est vide");
             else
             {
-                tabledesdonneesform tabledesdonneesform = touslesforms.stddf;
+                //tabledesdonneesform tabledesdonneesform = touslesforms.stddf;
                 //tabledesdonneesform = parametressondageform.stddf;
                 // tabledesdonneesform.tabledesdonneesgrid = tabledesdonneesform.stdddgv;
-                tabledesdonneesform.ShowDialog();
+                touslesforms.stddf.ShowDialog();
             }
         }
 
