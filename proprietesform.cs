@@ -31,8 +31,9 @@ namespace Pieu_Pro
         {
             tabledesformations.RowCount = 1;
             tabledesformations[0, 0].Value = "Formation1";
-
             setCellComboBoxItems(tabledesformations, 0, 1, touslesforms.sclassesdesol);
+            tabledesformations[1, 0].Value = touslesforms.sclassesdesol[0];
+            touslesforms.sformationsd.Add(Convert.ToString(tabledesformations[0,0].Value), new formation());
 
             methodedecalculcb.Items.AddRange(touslesforms.smethodesdecalcul);
             classesdepieuxcb.Items.AddRange(touslesforms.sclassesdepieux);
@@ -47,6 +48,8 @@ namespace Pieu_Pro
             tabledesformations.RowCount = touslesforms.snbformations;
             tabledesformations[0, touslesforms.snbformations-1].Value = "Formation"+ Convert.ToString(touslesforms.snbformations);
             setCellComboBoxItems(tabledesformations, touslesforms.snbformations - 1, 1, touslesforms.sclassesdesol);
+            tabledesformations[1, touslesforms.snbformations - 1].Value =touslesforms.sclassesdesol[0] ;
+            touslesforms.sformationsd.Add(Convert.ToString( tabledesformations[0, touslesforms.snbformations - 1].Value),new formation());
 
         }
 
@@ -58,6 +61,8 @@ namespace Pieu_Pro
             tabledesformations[0, 0].Value = "Formation1";
             nbflabel.Text = Convert.ToString(touslesforms.snbformations);
             setCellComboBoxItems(tabledesformations, 0, 1, touslesforms.sclassesdesol);
+            touslesforms.sformationsd.Clear();
+            touslesforms.sformationsd.Add(Convert.ToString(tabledesformations[0, 0].Value), new formation());
         }
 
         private void methodedecalculcb_SelectedIndexChanged(object sender, EventArgs e)
@@ -81,6 +86,24 @@ namespace Pieu_Pro
             {
                 e.Handled = true;
             }
+        }
+
+        private void tabledesformations_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            int colonne = e.ColumnIndex;
+            int ligne =e.RowIndex;
+            
+            //string s;
+            //s = Convert.ToString(tabledesformations.CurrentCell.Value);
+           /* if (colonne == 0) 
+            {
+                //MessageBox.Show("Etes vous sur de vouloir changer le nom de la formation");
+                //tabledesformations[0, ligne].Value = s;
+            }
+            else
+            {
+                touslesforms.sformationsd[Convert.ToString(this.tabledesformations[0, ligne].Value)].classedesol= Convert.ToString(this.tabledesformations[colonne,ligne].Value);
+            } */
         }
     }
 }

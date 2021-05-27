@@ -17,7 +17,7 @@ namespace Pieu_Pro
         public List<float> emmpa = new List<float>();
         public List<float> plmpa = new List<float>();
         public List<float> pfmpa = new List<float>();
-        public  Dictionary<string,float> basesformations=new Dictionary<string, float>();
+        public  Dictionary<string,float> basesformationsp=new Dictionary<string, float>();
         //public List<string,float> bf = new List<string, float>();
     }
     [Serializable]

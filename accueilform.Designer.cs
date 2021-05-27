@@ -165,6 +165,7 @@
             this.proprietefenetrebutton.Name = "proprietefenetrebutton";
             this.proprietefenetrebutton.Size = new System.Drawing.Size(143, 23);
             this.proprietefenetrebutton.TabIndex = 0;
+            this.proprietefenetrebutton.Tag = "Propriété";
             this.proprietefenetrebutton.Text = "Propriétés";
             this.proprietefenetrebutton.UseVisualStyleBackColor = true;
             this.proprietefenetrebutton.Click += new System.EventHandler(this.proprietefenetrebutton_Click);
@@ -217,6 +218,7 @@
             this.nouveauprojet.Size = new System.Drawing.Size(44, 27);
             this.nouveauprojet.TabIndex = 0;
             this.nouveauprojet.Tag = "Nouveau Projet";
+            this.nouveauprojet.Click += new System.EventHandler(this.nouveauprojet_Click);
             this.nouveauprojet.MouseHover += new System.EventHandler(this.nouveauprojet_MouseHover);
             // 
             // button9
@@ -428,8 +430,8 @@
         private System.Windows.Forms.Button proprietefenetrebutton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button tabledesdonnees;
-        private System.Windows.Forms.Button enregistrersous;
-        private System.Windows.Forms.Button enregistrer;
+        public System.Windows.Forms.Button enregistrersous;
+        public System.Windows.Forms.Button enregistrer;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;

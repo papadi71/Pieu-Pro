@@ -34,9 +34,11 @@ namespace Pieu_Pro
           
             for (int k=0; k<touslesforms.snbformations; k++)
             {
-                if (touslesforms.spropf.tabledesformations.RowCount!=0)
-                pps.paraprofinterfacesdgv[0, k].Value = touslesforms.spropf.tabledesformations[0, k].Value;
-                pps.paraprofinterfacesdgv[1, k].Value = true;
+                if (touslesforms.spropf.tabledesformations.RowCount != 0)
+                {
+                    pps.paraprofinterfacesdgv[0, k].Value = touslesforms.spropf.tabledesformations[0, k].Value;
+                    pps.paraprofinterfacesdgv[1, k].Value = true;
+                }
             }
             pps.paraprofinterfacesdgv.ReadOnly = false;
             pps.ShowDialog();

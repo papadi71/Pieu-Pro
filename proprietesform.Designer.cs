@@ -90,6 +90,7 @@ namespace Pieu_Pro
             this.tabledesformations.Name = "tabledesformations";
             this.tabledesformations.Size = new System.Drawing.Size(662, 156);
             this.tabledesformations.TabIndex = 2;
+            this.tabledesformations.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.tabledesformations_CellValueChanged);
             // 
             // nomformation
             // 
@@ -376,7 +377,7 @@ namespace Pieu_Pro
         public System.Windows.Forms.ComboBox methodedecalculcb;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label nbflabel;
+        public System.Windows.Forms.Label nbflabel;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomformation;
         private System.Windows.Forms.DataGridViewComboBoxColumn classedesol;
         public System.Windows.Forms.TextBox nomcalcultxtbox;

@@ -12,11 +12,11 @@ namespace Pieu_Pro.Classes_pour_enregistrements
 {
     public class session
     {
-        //private const string FILENAME = "session.xml";
-        private const string FILENAME = "session.ppr";
+        
+        private const string FILENAME = "session.xml";
 
         private static string _applicationDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        private static string _applicationPath = Path.Combine(_applicationDataPath, "Pieu-PRO");
+        private static string _applicationPath = Path.Combine(_applicationDataPath, "Pieu-Pro");
 
         private readonly XmlWriterSettings _writterSettings;
 

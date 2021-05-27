@@ -63,24 +63,24 @@ namespace Pieu_Pro
                 pressio.cotetete = cotetetesondage;
                 pressio.nom = nomsondage;
                 pressio.profondeur = profondeur;
-                //pressio.basesformations=new Dictionary<string, float>();
+                //pressio.basesformationsp=new Dictionary<string, float>();
 
                 //mise à jour du dictionnaire des formations et du dictionnaire baseformation de pressio
                 for(int k=0; k < touslesforms.snbformations; k++)
                 {
-                    //touslesforms.stdddstockage[name].basesformations.Keys
+                    //touslesforms.stdddstockage[name].basesformationsp.Keys
                     if ((bool)paraprofinterfacesdgv[1, k].Value == true)
                     {
-                        pressio.basesformations.Add(Convert.ToString(paraprofinterfacesdgv[0, k].Value), float.Parse(Convert.ToString(paraprofinterfacesdgv[2, k].Value)));
+                        pressio.basesformationsp.Add(Convert.ToString(paraprofinterfacesdgv[0, k].Value), float.Parse(Convert.ToString(paraprofinterfacesdgv[2, k].Value)));
                         
 
-                        if (touslesforms.sformationsd.Keys.Contains(Convert.ToString(paraprofinterfacesdgv[0, k].Value)))
-                            touslesforms.sformationsd[Convert.ToString(paraprofinterfacesdgv[0, k].Value)].cotesbase.Add(float.Parse(Convert.ToString(paraprofinterfacesdgv[2, k].Value)));
-                        else
+                       // if (touslesforms.sformationsd.Keys.Contains(Convert.ToString(paraprofinterfacesdgv[0, k].Value)))
+                            touslesforms.sformationsd[Convert.ToString(paraprofinterfacesdgv[0, k].Value)].cotesbase.Add(cotetetesondage - float.Parse(Convert.ToString(paraprofinterfacesdgv[2, k].Value)));
+                       /* else
                         {
                             touslesforms.sformationsd.Add(Convert.ToString(paraprofinterfacesdgv[0, k].Value), new formation());
-                            touslesforms.sformationsd[Convert.ToString(paraprofinterfacesdgv[0, k].Value)].cotesbase.Add(float.Parse(Convert.ToString(paraprofinterfacesdgv[2, k].Value)));
-                        }
+                            touslesforms.sformationsd[Convert.ToString(paraprofinterfacesdgv[0, k].Value)].cotesbase.Add(cotetetesondage-float.Parse(Convert.ToString(paraprofinterfacesdgv[2, k].Value)));
+                        }*/
                     }
                     
                 }

@@ -72,20 +72,20 @@ namespace Pieu_Pro
                 touslesforms.stdddstockage.Add(kkey,new PMT());
                 
 
-                //touslesforms.stdddstockage[kkey].basesformations.Clear();
-                foreach ( string formation in touslesforms.stddd[kkey].basesformations.Keys)
+                //touslesforms.stdddstockage[kkey].basesformationsp.Clear();
+                foreach ( string formation in touslesforms.stddd[kkey].basesformationsp.Keys)
                 {
 
                     //MessageBox.Show(kkey+" : " + formation);
-                    if (touslesforms.stdddstockage[kkey].basesformations.ContainsKey(formation)==false)
+                    if (touslesforms.stdddstockage[kkey].basesformationsp.ContainsKey(formation)==false)
                     {
-                        touslesforms.stdddstockage[kkey].basesformations.Add(formation, touslesforms.stddd[kkey].basesformations[formation]);
-                       // MessageBox.Show(Convert.ToString(touslesforms.stddd[kkey].basesformations[formation]));
+                        touslesforms.stdddstockage[kkey].basesformationsp.Add(formation, touslesforms.stddd[kkey].basesformationsp[formation]);
+                       // MessageBox.Show(Convert.ToString(touslesforms.stddd[kkey].basesformationsp[formation]));
                     }
                     /*else
                     {
-                        touslesforms.stddd[kkey].basesformations[formation] = touslesforms.stddd[kkey].basesformations[formation];
-                        MessageBox.Show(Convert.ToString(touslesforms.stddd[kkey].basesformations[formation]));
+                        touslesforms.stddd[kkey].basesformationsp[formation] = touslesforms.stddd[kkey].basesformationsp[formation];
+                        MessageBox.Show(Convert.ToString(touslesforms.stddd[kkey].basesformationsp[formation]));
 
 
                     }*/
@@ -118,7 +118,7 @@ namespace Pieu_Pro
                 pressio.emmpa = new List<float>();
                 pressio.plmpa = new List<float>();
                 pressio.pfmpa = new List<float>();
-                pressio.basesformations = new Dictionary<string, float>();
+                pressio.basesformationsp = new Dictionary<string, float>();
                 */
 
 
@@ -191,9 +191,9 @@ namespace Pieu_Pro
                         float coteligne = float.Parse(Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i, compteurligne].Value));
                        //if (touslesforms.snbsondages > 1)
                         //{
-                            foreach (string kkkey in touslesforms.stdddstockage[name].basesformations.Keys)
+                            foreach (string kkkey in touslesforms.stdddstockage[name].basesformationsp.Keys)
                             {
-                                float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformations[kkkey];
+                                float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformationsp[kkkey];
                                
 
                                 if (coteligne < toit && coteligne >= basef)
@@ -212,9 +212,9 @@ namespace Pieu_Pro
                         {
                             pressio.emmpa.Add(float.Parse(Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i + 2, compteurligne].Value)));
                             float em = float.Parse(Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i + 2, compteurligne].Value));
-                            foreach (string kkkey in touslesforms.stdddstockage[name].basesformations.Keys)
+                            foreach (string kkkey in touslesforms.stdddstockage[name].basesformationsp.Keys)
                             {
-                                float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformations[kkkey];
+                                float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformationsp[kkkey];
                                 if (coteligne < toit && coteligne >= basef)
                                 {
                                     touslesforms.sformationsd[kkkey].emmpa.Add(em);
@@ -231,9 +231,9 @@ namespace Pieu_Pro
                         {
                             pressio.plmpa.Add(float.Parse(Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i + 3, compteurligne].Value)));
                             float pl = float.Parse(Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i + 3, compteurligne].Value));
-                            foreach (string kkkey in touslesforms.stdddstockage[name].basesformations.Keys)
+                            foreach (string kkkey in touslesforms.stdddstockage[name].basesformationsp.Keys)
                             {
-                                float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformations[kkkey];
+                                float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformationsp[kkkey];
                                 if (coteligne < toit && coteligne >= basef)
                                 {
                                     touslesforms.sformationsd[kkkey].plmpa.Add(pl);
@@ -249,9 +249,9 @@ namespace Pieu_Pro
                         {
                             pressio.pfmpa.Add(float.Parse(Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i + 4, compteurligne].Value)));
                             float pf = float.Parse(Convert.ToString(touslesforms.stddf.tabledesdonneesgrid[5 * i + 4, compteurligne].Value));
-                            foreach (string kkkey in touslesforms.stdddstockage[name].basesformations.Keys)
+                            foreach (string kkkey in touslesforms.stdddstockage[name].basesformationsp.Keys)
                             {
-                                float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformations[kkkey];
+                                float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformationsp[kkkey];
                                 if (coteligne < toit && coteligne >= basef)
                                 {
                                     touslesforms.sformationsd[kkkey].pfmpa.Add(pf);
@@ -269,13 +269,13 @@ namespace Pieu_Pro
                    
 
                     //mise à jour du dictionnaire
-                    foreach (string f in touslesforms.stdddstockage[name].basesformations.Keys)
+                    foreach (string f in touslesforms.stdddstockage[name].basesformationsp.Keys)
                     {
-                        pressio.basesformations.Add(f, touslesforms.stdddstockage[name].basesformations[f]);
+                        pressio.basesformationsp.Add(f, touslesforms.stdddstockage[name].basesformationsp[f]);
                         
                         //Mise à jour des cotes base de la formation f dans le dictionnaire des formations
-                        float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformations[f];
-                        touslesforms.sformationsd[f].cotesbase.Add(basef);
+                        float basef = pressio.cotetete - touslesforms.stdddstockage[name].basesformationsp[f];
+                        //touslesforms.sformationsd[f].cotesbase.Add(basef);
                     }
                     //touslesforms.stddd[name]= pressio;
                     if (touslesforms.stddd.ContainsKey(name))
@@ -426,8 +426,10 @@ namespace Pieu_Pro
             for (int k = 0; k < touslesforms.snbformations; k++)
             {
                 if (touslesforms.spropf.tabledesformations.RowCount != 0)
+                {
                     pps.paraprofinterfacesdgv[0, k].Value = touslesforms.spropf.tabledesformations[0, k].Value;
                     pps.paraprofinterfacesdgv[1, k].Value = true;
+                }
             }
             pps.paraprofinterfacesdgv.ReadOnly = false;
             pps.ShowDialog();
